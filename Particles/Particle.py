@@ -18,7 +18,7 @@ except ImportError:
     def b2CircleShape(*args, **kwargs):
         raise NotImplementedError()
 
-from chp06_agents.Particles.Globals import vec_pixels2world, vec_world2pixels, scalar_pixels2world, WIDTH, HEIGHT
+from Particles.Globals import vec_pixels2world, vec_world2pixels, scalar_pixels2world, WIDTH, HEIGHT
 
 
 class Sprite(metaclass=ABCMeta):

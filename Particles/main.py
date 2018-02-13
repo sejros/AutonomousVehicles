@@ -9,10 +9,10 @@ from random import random
 import pygame
 from numpy import dot
 
-from chp06_agents.Particles.FlowField import PathField, Grid
-from chp06_agents.Particles.Globals import WIDTH, HEIGHT, WHITE, mousepos, is_mouse_down, norm
-from chp06_agents.Particles.Path import Path
-from chp06_agents.Particles.Vehicle import Vehicle
+from Particles.FlowField import PathField, Grid
+from Particles.Globals import WIDTH, HEIGHT, WHITE, mousepos, is_mouse_down, norm
+from Particles.Path import Path
+from Particles.Vehicle import Vehicle
 
 
 # endregion
@@ -57,12 +57,12 @@ N = 100
 #                           size=5, speed=5))
 
 path = Path()
-path.add_point(100, 100)
-path.add_point(WIDTH - 100, 100)
-path.add_point(WIDTH - 100, HEIGHT - 100)
-path.add_point(WIDTH / 2, HEIGHT - 250)
-path.add_point(100, HEIGHT - 100)
-path.add_point(100, 100)
+path.add_point(100, 100)  # upper left corner
+path.add_point(WIDTH - 100, 100)    # upper right corner
+path.add_point(WIDTH - 100, HEIGHT - 100)   # lower right corner
+path.add_point(WIDTH / 2, HEIGHT - 250)     # lower turn
+path.add_point(100, HEIGHT - 100)   # lower left corner
+path.add_point(100, 100)    # back to starting point
 
 flowfield = PathField(path, resolution=30)
 
@@ -88,7 +88,7 @@ def main():
         particle.update()
         particle.toroid()
         # particle.bounce()
-        particle.seek(mousepos)
+        # particle.seek(mousepos)
 
         # particle.separate(movers)
         particle.separate(movers.nearest(particle.position, radius=20))

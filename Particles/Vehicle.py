@@ -5,8 +5,8 @@ import pygame
 from numpy import array as vector
 from numpy.linalg import norm
 
-from chp06_agents.Particles.Particle import Mover
-from chp06_agents.Particles.Globals import normalize, dist, WIDTH, HEIGHT
+from Particles.Particle import Mover
+from Particles.Globals import normalize, dist, WIDTH, HEIGHT
 
 
 class Vehicle(Mover):

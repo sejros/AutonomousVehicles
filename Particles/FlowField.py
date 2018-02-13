@@ -1,11 +1,11 @@
 from math import pi, sin, cos
 
 import pygame
-from noise import pnoise2, pnoise3
+# from noise import pnoise2, pnoise3
 from numpy import array as vector
 from math import ceil, floor
 
-from chp06_agents.Particles.Globals import WIDTH, HEIGHT, dist, normalize
+from Particles.Globals import WIDTH, HEIGHT, dist, normalize
 
 
 class FlowField:
@@ -36,6 +36,7 @@ class FlowField:
                                  center, center + self.field[i][j] * 20, 2)
 
 
+"""
 class PerlinField(FlowField):
     def __init__(self):
         super().__init__()
@@ -56,6 +57,7 @@ class PerlinField(FlowField):
                 self.field[i][j] = vector((sin(angle), cos(angle))) * 20
                 yoff += delta
             xoff += delta
+"""
 
 
 class PathField(FlowField):
